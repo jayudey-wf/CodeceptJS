@@ -1,0 +1,18 @@
+{
+  "tests": "./fs_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "FileSystem": {},
+    "Error_1_helper": {
+      "require": "./error_1_helper.js"
+    },
+    "Error_2_helper": {
+      "require": "./error_2_helper.js"
+    }
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "sandbox"
+}

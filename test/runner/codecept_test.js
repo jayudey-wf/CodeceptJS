@@ -34,6 +34,16 @@ describe('CodeceptJS Runner', () => {
     });
   });
 
+  it('should be failed helper', (done) => {
+    process.chdir(codecept_dir);
+    exec(codecept_run_config('codecept.failedHelper.json'), (err, stdout) => {
+      stdout.should.include('Helper 2: I\'m simple Before hook'); // feature
+      stdout.should.include('Some random exception'); // feature
+      assert(!err);
+      done();
+    });
+  });
+
   it('should be executed with config path', (done) => {
     process.chdir(__dirname);
     exec(`${codecept_run} -c ${codecept_dir}`, (err, stdout) => {
